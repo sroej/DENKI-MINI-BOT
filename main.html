@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>𝐃𝐄𝐍𝐊𝐈 𝐌𝐈𝐍𝐈 𝐁𝐎𝐓</title>
+  <link rel="icon" type="jpg" href="https://files.catbox.moe/7bhodb.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+    }
+
+    /* --- Image de fond --- */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("https://files.catbox.moe/7bhodb.jpg") no-repeat center center/cover;
+      filter: brightness(0.8); /* plus visible */
+      z-index: -2;
+    }
+
+    /* --- Dégradé semi-transparent --- */
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(-45deg, rgba(0,0,0,0.5), rgba(30,30,30,0.4), rgba(50,50,50,0.3), rgba(0,0,0,0.5));
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .box {
+      width: 360px;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 40px rgba(255, 255, 0, 0.4);
+      text-align: center;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .box i {
+      font-size: 3rem;
+      color: #ffeb3b;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #ffeb3b, #ffc107);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h6 {
+      margin: 5px 0;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    .input-container {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 0.5rem;
+      gap: 0.5rem;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .input-container input {
+      flex: 1;
+      border: none;
+      border-radius: 10px;
+      padding: 0.8rem;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      font-weight: bold;
+    }
+
+    .input-container button {
+      background: linear-gradient(45deg, #ffeb3b, #ffc107);
+      border: none;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .input-container button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #ffc107, #ffeb3b);
+    }
+
+    #waiting-message {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #ff9800;
+    }
+
+    #pair {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    #copy-btn {
+      display: none;
+      margin-top: 20px;
+      background: linear-gradient(45deg, #ffeb3b, #ffc107);
+      padding: 10px 20px;
+      border-radius: 12px;
+      color: black;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #copy-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #ffc107, #ffeb3b);
+    }
+
+    /* --- Bouton musique --- */
+    #music-btn {
+      margin-top: 15px;
+      background: linear-gradient(45deg, #ffeb3b, #ffc107);
+      padding: 8px 15px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    #music-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #ffc107, #ffeb3b);
+    }
+
+    @media (max-width: 500px) {
+      .box { width: 90%; }
+      .input-container { flex-direction: column; }
+      .input-container button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box">
+      <div id="text">
+        <i class="fa fa-user"></i>
+        <h3>𝐃𝐄𝐍𝐊𝐈 𝐏𝐀𝐈𝐑 𝐂𝐎𝐃𝐄</h3>
+        <h6>𝙲𝚁𝙴𝙰𝚃𝙴𝙳 𝙱𝚈 𝑫𝑬𝑵𝑲𝑰</h6>
+        <h6>ᴇɴᴛᴇʀ ʏᴏᴜʀ ɴᴜᴍʙᴇʀ ᴡɪᴛʜ ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ</h6>
+        <div class="input-container">
+          <input placeholder="225014387xxxx" type="number" id="number">
+          <button id="submit">Submit</button>
+        </div>
+        <div id="waiting-message" style="display: none;">⏳ Please wait a while...</div>
+        <div id="pair"></div>
+        <button id="copy-btn">Copy Code</button>
+        <button id="music-btn">🔊 Activate the song</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎵 Musique de fond -->
+  <audio id="bg-music" autoplay loop muted>
+    <source src="https://files.catbox.moe/auq30q.mp3" type="audio/mp3">
+  </audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    let pairDiv = document.getElementById("pair");
+    let submitBtn = document.getElementById("submit");
+    let numberInput = document.getElementById("number");
+    let copyBtn = document.getElementById("copy-btn");
+    let music = document.getElementById("bg-music");
+    let musicBtn = document.getElementById("music-btn");
+
+    submitBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!numberInput.value) {
+        pairDiv.innerHTML = '<span style="color:#ff4d4d;font-weight:bold">❗ Enter your WhatsApp number with country code.</span>';
+      } else if (numberInput.value.replace(/[^0-9]/g, "").length < 11) {
+        pairDiv.innerHTML = '<span style="color:#ff4d4d;font-weight:bold">❌ Invalid number format ❌</span>';
+      } else {
+        const bc = numberInput.value.replace(/[^0-9]/g, "");
+        numberInput.type = "text";
+        numberInput.value = "+" + bc;
+        numberInput.style = "color:black;font-size:20px";
+        pairDiv.innerHTML = '<span style="color:#ff9800;font-weight:bold">⏳ Please wait...</span>';
+
+        try {
+          let { data } = await axios(`/code?number=${bc}`);
+          let code = data.code || "Service Unavailable";
+          pairDiv.innerHTML = `<span id="generated-code" style="color:#00ff00;font-size:1.3rem;font-weight:bold">${code}</span>`;
+          copyBtn.style.display = "inline-block";
+        } catch (err) {
+          pairDiv.innerHTML = '<span style="color:red;font-weight:bold">⚠️ Error fetching code</span>';
+        }
+      }
+    });
+
+    copyBtn.addEventListener("click", async () => {
+      let codeEl = document.getElementById("generated-code");
+      if (codeEl) {
+        await navigator.clipboard.writeText(codeEl.innerText);
+        copyBtn.innerText = "✅ Copied!";
+        setTimeout(() => copyBtn.innerText = "Copy Code", 1500);
+      }
+    });
+
+    musicBtn.addEventListener("click", () => {
+      if (music.muted) {
+        music.muted = false;
+        musicBtn.innerText = "🔇 disabled the song";
+      } else {
+        music.muted = true;
+        musicBtn.innerText = "🔊 Activate the song";
+      }
+    });
+  </script>
+</body>
+</html>
