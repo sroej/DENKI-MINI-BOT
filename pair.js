@@ -48,7 +48,7 @@ const config = {
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbB06qE9sBIFlu00Dq0R'
 };
 
-const octokit = new Octokit({ auth: '' });
+const octokit = new Octokit({ auth: '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' });
 const owner = 'sroej';
 const repo = 'DENKI-SESSION';
 
