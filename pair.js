@@ -637,7 +637,7 @@ function setupCommandHandlers(socket, number) {
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
                 newsletterJid: '120363415926731264@newsletter',
-                newsletterName: 'ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴋɪ,
+                newsletterName: 'ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴋɪ',
                 serverMessageId: -1
             }
         };
